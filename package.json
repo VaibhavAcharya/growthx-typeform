@@ -9,19 +9,23 @@
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
     "@remix-run/node": "^1.14.3",
     "@remix-run/react": "^1.14.3",
     "@remix-run/serve": "^1.14.3",
     "class-variance-authority": "^0.4.0",
     "isbot": "^3.6.5",
+    "qs": "^6.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "yup": "^1.0.2"
   },
   "devDependencies": {
+    "@headlessui/tailwindcss": "^0.1.2",
     "@remix-run/dev": "^1.14.3",
     "@remix-run/eslint-config": "^1.14.3",
+    "@types/qs": "^6.9.7",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "eslint": "^8.27.0",

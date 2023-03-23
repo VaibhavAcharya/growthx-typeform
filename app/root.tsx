@@ -46,7 +46,7 @@ export const links: LinksFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth accent-blue-500">
       <head>
         <Meta />
         <Links />

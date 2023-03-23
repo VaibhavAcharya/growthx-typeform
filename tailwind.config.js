@@ -10,7 +10,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@headlessui/tailwindcss")],
   future: {
     hoverOnlyWhenSupported: true,
   },
