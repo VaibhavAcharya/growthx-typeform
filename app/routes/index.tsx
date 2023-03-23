@@ -19,10 +19,20 @@ import { CheckIcon } from "@heroicons/react/24/solid";
 export const action: ActionFunction = async ({ request }) => {
   const formData = parseFromData(await request.formData());
 
-  console.log(formData);
+  try {
+    await fetch("https://eo3oi83n1j77wgp.m.pipedream.net", {
+      method: "post",
+      body: JSON.stringify(formData),
+    });
+  } catch (e) {
+    console.error("Error: Cannot send data to pipedream!");
+  }
+
+  // can send emails from here using nodemailer, I just do not have a SMTP account
 
   return {
     ok: true,
+    submittedData: formData,
   };
 };
 
@@ -270,11 +280,16 @@ export default function Index() {
         </nav>
 
         {actionData?.ok ? (
-          <p className="text-3xl font-bold">
-            All done! Thanks for your time.
-            <br />
-            <span className="text-sm font-normal">Check for the email. 😉</span>
-          </p>
+          <>
+            <p className="text-3xl font-bold">
+              All done! Thanks for your time.
+              <br />
+              <span className="text-xs font-mono font-normal break-words">
+                Response has been sent to
+                `https://eo3oi83n1j77wgp.m.pipedream.net`. ✌
+              </span>
+            </p>
+          </>
         ) : (
           <Form ref={formRef} method="post" replace className="">
             {formFlow.map(function (section, i) {
